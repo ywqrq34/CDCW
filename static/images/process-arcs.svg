@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" fill="none" stroke="#5BB37F" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 8">
+<path d="M 79.15 25.74 A 116.0 116.0 0 0 1 180.85 25.74" />
+<path d="M 170.35 26.74 L 180.85 25.74 L 175.17 16.85" stroke-dasharray="none" fill="none"/>
+<path d="M 234.26 79.15 A 116.0 116.0 0 0 1 234.26 180.85" />
+<path d="M 233.26 170.35 L 234.26 180.85 L 243.15 175.17" stroke-dasharray="none" fill="none"/>
+<path d="M 180.85 234.26 A 116.0 116.0 0 0 1 79.15 234.26" />
+<path d="M 89.65 233.26 L 79.15 234.26 L 84.83 243.15" stroke-dasharray="none" fill="none"/>
+<path d="M 25.74 180.85 A 116.0 116.0 0 0 1 25.74 79.15" />
+<path d="M 26.74 89.65 L 25.74 79.15 L 16.85 84.83" stroke-dasharray="none" fill="none"/>
+</svg>

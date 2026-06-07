@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>초원페이 - 신용카드 결제, 빠르고 안전하게</title>
-  <meta name="description" content="신용카드 결제, 빠르고 안전하게. 업계 최고 지급률과 24시간 운영으로 믿을 수 있는 매입 서비스.">
-  <meta name="keywords" content="초원페이, 신용카드 결제, 카드 매입, 빠른 입금, 높은 지급률">
+  <title>초원페이 - 신용카드 현금화, 빠르고 안전하게</title>
+  <meta name="description" content="신용카드 현금화, 빠르고 안전하게. 업계 최고 지급률과 24시간 운영으로 믿을 수 있는 매입 서비스.">
+  <meta name="keywords" content="초원페이, 신용카드 현금화, 카드 매입, 빠른 입금, 높은 지급률">
   <meta name="theme-color" content="#4A9E6B">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon-32x32.png">
@@ -20,36 +20,39 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="초원페이 - 신용카드 결제, 빠르고 안전하게">
+  <meta name="twitter:title" content="초원페이 - 신용카드 현금화, 빠르고 안전하게">
   <meta name="twitter:description" content="업계 최고 지급률과 24시간 운영으로 믿을 수 있는 매입 서비스.">
   <meta name="twitter:image" content="static/images/og-image.png">
   <link rel="canonical" href="">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/tailwind.css">
   <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
   <!-- ===== Header / Navigation ===== -->
   <header class="site-header" id="siteHeader">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="cw-1700 mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 md:h-20">
-        <a href="#" class="nav-logo"><img src="static/images/logo.png" alt="초원페이" class="nav-logo-img"></a>
-        <nav class="hidden md:flex items-center gap-8">
+        <a href="#" class="nav-logo"><img src="static/images/logo-header.webp" alt="초원페이" class="nav-logo-img"></a>
+        <nav class="hidden xl:flex items-center gap-10">
           <a href="#features" class="nav-link">서비스 소개</a>
           <a href="#partners" class="nav-link">카드사 안내</a>
           <a href="#process" class="nav-link">이용 절차</a>
-          <a href="#contact" class="nav-link">문의하기</a>
+          <a href="#reviews" class="nav-link">고객 후기</a>
         </nav>
-        <div class="hidden md:flex items-center gap-3">
-          <a href="#" class="cta-btn cta-kakao" style="width:140px;height:44px;font-size:0.85rem;border-radius:10px;">
+        <div class="hidden xl:flex items-center gap-3">
+          <a href="#" data-kakao class="cta-btn cta-kakao cta-btn--sm">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.86 5.22 4.65 6.6l-.95 3.53c-.07.26.2.47.43.33l4.1-2.72c.58.07 1.17.11 1.77.11 5.52 0 10-3.58 10-7.95S17.52 3 12 3z"/></svg>
             카카오 상담
           </a>
-          <a href="tel:1588-0000" class="cta-btn cta-phone" style="width:140px;height:44px;font-size:0.85rem;border-radius:10px;border-width:1.5px;">
+          <a href="tel:1588-0000" data-phone class="cta-btn cta-phone cta-btn--sm">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             전화 문의
           </a>
         </div>
-        <div class="hamburger md:hidden" id="hamburgerBtn" aria-label="메뉴 열기">
+        <div class="hamburger xl:hidden" id="hamburgerBtn" aria-label="메뉴 열기">
           <span></span><span></span><span></span>
         </div>
       </div>
@@ -57,60 +60,65 @@
   </header>
 
   <!-- ===== Mobile Menu ===== -->
+  <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
   <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-menu-close" id="mobileMenuClose" aria-label="메뉴 닫기">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A2E35" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    <div class="mobile-menu-head">
+      <img src="static/images/logo-header.webp" alt="초원페이" class="mobile-menu-logo">
+      <div class="mobile-menu-close" id="mobileMenuClose" aria-label="메뉴 닫기">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A2E35" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </div>
     </div>
-    <a href="#features" class="nav-link mobile-nav-link">서비스 소개</a>
-    <a href="#partners" class="nav-link mobile-nav-link">카드사 안내</a>
-    <a href="#process" class="nav-link mobile-nav-link">이용 절차</a>
-    <a href="#contact" class="nav-link mobile-nav-link">문의하기</a>
-    <div class="flex gap-3 mt-4">
-      <a href="#" class="cta-btn cta-kakao">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.86 5.22 4.65 6.6l-.95 3.53c-.07.26.2.47.43.33l4.1-2.72c.58.07 1.17.11 1.77.11 5.52 0 10-3.58 10-7.95S17.52 3 12 3z"/></svg>
-        카카오 상담
+    <nav class="mobile-menu-list">
+      <a href="#features" class="mobile-nav-link">서비스 소개</a>
+      <a href="#partners" class="mobile-nav-link">카드사 안내</a>
+      <a href="#process" class="mobile-nav-link">이용 절차</a>
+      <a href="#reviews" class="mobile-nav-link">고객 후기</a>
+      <a href="tel:1588-0000" data-phone class="mobile-nav-link mobile-nav-phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        전화 상담
       </a>
-      <a href="tel:1588-0000" class="cta-btn cta-phone">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        전화 문의
-      </a>
-    </div>
+    </nav>
+    <a href="#" data-kakao class="mobile-menu-kakao">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.86 5.22 4.65 6.6l-.95 3.53c-.07.26.2.47.43.33l4.1-2.72c.58.07 1.17.11 1.77.11 5.52 0 10-3.58 10-7.95S17.52 3 12 3z"/></svg>
+      카카오톡 상담
+    </a>
   </div>
 
   <!-- ===== MAIN ===== -->
   <main>
     <!-- ===== Hero Section ===== -->
     <section class="hero-section" id="hero">
-      <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex items-center">
-        <div class="flex flex-col lg:flex-row items-center justify-between w-full gap-8 lg:gap-12 pt-12 pb-24 lg:pt-16 lg:pb-32">
-          <!-- Left Content -->
-          <div class="flex-1 text-center lg:text-left max-w-xl">
+      <div class="hero-content mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex items-center">
+        <div class="hero-layout w-full pt-12 pb-24 lg:pt-16 lg:pb-32">
+          <!-- Text -->
+          <div class="hero-text text-center lg:text-left max-w-xl">
             <div class="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6" style="background:#FFFFFF;border:1.5px solid var(--color-green);">
               <span class="w-2 h-2 rounded-full animate-pulse" style="background:var(--color-green-dark);"></span>
               <span class="text-sm font-medium" style="color:var(--color-green-dark);">24시간 365일 운영중</span>
             </div>
             <h1 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold leading-tight mb-6" style="color:var(--color-text-dark);">
-              신용카드 현금화,<br>
+              신용카드 <span class="nb">현금화,</span><br>
               빠르고 안전하게
             </h1>
             <p class="text-base sm:text-lg leading-relaxed mb-8 max-w-md mx-auto lg:mx-0" style="color:var(--color-text-gray);">
               업계 최고 지급률과 5분 내 입금 보장.<br class="hidden sm:block">
               초원페이가 믿을 수 있는 파트너가 되어드립니다.
             </p>
-            <div class="flex flex-row gap-4 justify-center lg:justify-start">
-              <a href="#" class="cta-btn cta-kakao">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.86 5.22 4.65 6.6l-.95 3.53c-.07.26.2.47.43.33l4.1-2.72c.58.07 1.17.11 1.77.11 5.52 0 10-3.58 10-7.95S17.52 3 12 3z"/></svg>
-                카카오톡 상담
-              </a>
-              <a href="tel:1588-0000" class="cta-btn cta-phone">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                전화 문의
-              </a>
-            </div>
           </div>
-          <!-- Right Image Placeholder -->
-          <div class="flex-shrink-0 hero-image-placeholder">
-            <!-- 디자이너 이미지 삽입 위치 (894×760) -->
+          <!-- Image (mobile: between text and buttons) -->
+          <div class="hero-image-placeholder">
+            <img src="static/images/hero_2.webp" alt="초원페이 서비스" class="hero-img">
+          </div>
+          <!-- CTA -->
+          <div class="hero-cta flex flex-row gap-4 justify-center lg:justify-start">
+            <a href="#" data-kakao class="cta-btn cta-kakao">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.86 5.22 4.65 6.6l-.95 3.53c-.07.26.2.47.43.33l4.1-2.72c.58.07 1.17.11 1.77.11 5.52 0 10-3.58 10-7.95S17.52 3 12 3z"/></svg>
+              카카오톡 상담
+            </a>
+            <a href="tel:1588-0000" data-phone class="cta-btn cta-phone">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              전화 문의
+            </a>
           </div>
         </div>
       </div>
@@ -133,90 +141,98 @@
 
     <!-- ===== Card Partners Section ===== -->
     <section class="py-16 md:py-24 bg-white" id="partners">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="cw-1700 mx-auto px-4 sm:px-6 lg:px-8">
         <div class="fade-in-up">
           <h2 class="section-title">제휴 카드사</h2>
           <p class="section-subtitle">국내 모든 카드사 이용 가능합니다</p>
         </div>
-        <div class="fade-in-up flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8">
-          <div class="card-logo-item">
-            <img src="static/images/card-samsung.png" alt="삼성카드" class="card-logo-img">
+        <div class="fade-in-up partner-logo-band">
+          <div class="partner-logo-marquee">
+          <div class="partner-logo-track">
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-1.webp" alt="하나카드"></div>
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-2.webp" alt="우리카드"></div>
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-3.webp" alt="BC카드"></div>
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-4.webp" alt="NH농협카드"></div>
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-5.webp" alt="IBK카드"></div>
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-6.webp" alt="신한카드"></div>
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-7.webp" alt="KB국민카드"></div>
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-8.webp" alt="현대카드"></div>
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-9.webp" alt="롯데카드"></div>
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-10.webp" alt="삼성카드"></div>
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-1.webp" alt="하나카드"></div>
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-2.webp" alt="우리카드"></div>
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-3.webp" alt="BC카드"></div>
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-4.webp" alt="NH농협카드"></div>
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-5.webp" alt="IBK카드"></div>
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-6.webp" alt="신한카드"></div>
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-7.webp" alt="KB국민카드"></div>
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-8.webp" alt="현대카드"></div>
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-9.webp" alt="롯데카드"></div>
+              <div class="partner-logo-chip"><img width="1000" height="330" src="static/images/partner-10.webp" alt="삼성카드"></div>
           </div>
-          <div class="card-logo-item">
-            <img src="static/images/card-shinhan.png" alt="신한카드" class="card-logo-img">
-          </div>
-          <div class="card-logo-item">
-            <img src="static/images/card-hyundai.png" alt="현대카드" class="card-logo-img">
-          </div>
-          <div class="card-logo-item">
-            <img src="static/images/card-kb.png" alt="KB국민" class="card-logo-img">
-          </div>
-          <div class="card-logo-item">
-            <img src="static/images/card-lotte.png" alt="롯데카드" class="card-logo-img">
-          </div>
-          <div class="card-logo-item">
-            <img src="static/images/card-hana.png" alt="하나카드" class="card-logo-img">
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ===== Features / Accordion Section ===== -->
+    <!-- ===== Features / Horizontal Accordion Section ===== -->
     <section class="py-16 md:py-24 bg-white" id="features">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="cw-1400 mx-auto px-4 sm:px-6 lg:px-8">
         <div class="fade-in-up">
           <h2 class="section-title">왜 초원페이인가요?</h2>
           <p class="section-subtitle">고객이 선택하는 이유가 있습니다</p>
         </div>
-        <div class="accordion-list fade-in-up">
-          <div class="accordion-item open">
-            <div class="accordion-header" data-index="0">
-              <div class="accordion-header-left">
-                <span class="accordion-number">01</span>
-                <h3 class="accordion-title">24시간 365일 운영 · 5분 내 입금</h3>
-              </div>
-              <div class="accordion-toggle">
+        <div class="h-accordion fade-in-up">
+          <div class="h-accordion-item open" data-index="0">
+            <div class="h-accordion-tab">
+              <span class="h-accordion-num">01</span>
+              <span class="h-accordion-tab-title">24시간 365일 운영 · 5분 내 입금</span>
+              <span class="h-accordion-tab-label">24시간 운영</span>
+              <span class="h-accordion-chevron">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-              </div>
+              </span>
             </div>
-            <div class="accordion-body">
-              <p class="accordion-desc">연중무휴 운영 체제로 언제 요청하셔도 빠르게 처리해 드립니다. 승인 후 5분 이내 입금을 보장합니다.</p>
-              <div class="accordion-image-placeholder">
-                <span class="text-gray-400 text-sm">이미지 준비중 (1100×500)</span>
+            <div class="h-accordion-panel">
+              <div class="h-accordion-panel-inner h-accordion-panel-bg" style="background-image: url('static/images/accordion-1.webp');">
+                <div class="h-accordion-text-overlay">
+                  <h3 class="h-accordion-title">24시간 365일 운영 · 5분 내 입금</h3>
+                  <p class="h-accordion-desc">연중무휴 운영 체제로 언제 요청하셔도 빠르게 처리해 드립니다. 승인 후 5분 이내 입금을 보장합니다.</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="accordion-item">
-            <div class="accordion-header" data-index="1">
-              <div class="accordion-header-left">
-                <span class="accordion-number">02</span>
-                <h3 class="accordion-title">지급률 업계 최고</h3>
-              </div>
-              <div class="accordion-toggle">
+          <div class="h-accordion-item" data-index="1">
+            <div class="h-accordion-tab">
+              <span class="h-accordion-num">02</span>
+              <span class="h-accordion-tab-title">지급률 업계 최고</span>
+              <span class="h-accordion-tab-label">최고 지급률</span>
+              <span class="h-accordion-chevron">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-              </div>
+              </span>
             </div>
-            <div class="accordion-body">
-              <p class="accordion-desc">타사 대비 높은 지급률로 고객님의 수익을 극대화합니다. 투명한 수수료 정책을 운영합니다.</p>
-              <div class="accordion-image-placeholder">
-                <span class="text-gray-400 text-sm">이미지 준비중 (1100×500)</span>
+            <div class="h-accordion-panel">
+              <div class="h-accordion-panel-inner h-accordion-panel-bg" style="background-image: url('static/images/accordion-2.webp');">
+                <div class="h-accordion-text-overlay">
+                  <h3 class="h-accordion-title">지급률 업계 최고</h3>
+                  <p class="h-accordion-desc">타사 대비 높은 지급률로 고객님의 수익을 극대화합니다. 투명한 수수료 정책을 운영합니다.</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="accordion-item">
-            <div class="accordion-header" data-index="2">
-              <div class="accordion-header-left">
-                <span class="accordion-number">03</span>
-                <h3 class="accordion-title">무이자 · 할부 가능 (카드사별 상이)</h3>
-              </div>
-              <div class="accordion-toggle">
+          <div class="h-accordion-item" data-index="2">
+            <div class="h-accordion-tab">
+              <span class="h-accordion-num">03</span>
+              <span class="h-accordion-tab-title">무이자 · 할부 가능 (카드사별 상이)</span>
+              <span class="h-accordion-tab-label">무이자 할부</span>
+              <span class="h-accordion-chevron">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-              </div>
+              </span>
             </div>
-            <div class="accordion-body">
-              <p class="accordion-desc">다양한 카드사의 무이자 및 할부 혜택을 이용하실 수 있습니다. 카드사별 세부 조건은 상담 시 안내드립니다.</p>
-              <div class="accordion-image-placeholder">
-                <span class="text-gray-400 text-sm">이미지 준비중 (1100×500)</span>
+            <div class="h-accordion-panel">
+              <div class="h-accordion-panel-inner h-accordion-panel-bg" style="background-image: url('static/images/accordion-3.webp');">
+                <div class="h-accordion-text-overlay">
+                  <h3 class="h-accordion-title">무이자 · 할부 가능 (카드사별 상이)</h3>
+                  <p class="h-accordion-desc">다양한 카드사의 무이자 및 할부 혜택을 이용하실 수 있습니다. 카드사별 세부 조건은 상담 시 안내드립니다.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -226,45 +242,43 @@
 
     <!-- ===== Process Section ===== -->
     <section class="py-16 md:py-24 bg-white" id="process">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="fade-in-up">
           <h2 class="section-title">서비스 이용 절차</h2>
           <p class="section-subtitle">간단한 4단계로 빠르게 이용하세요</p>
         </div>
-        <div class="fade-in-up flex flex-wrap justify-center items-start gap-6 md:gap-2 lg:gap-0">
+        <div class="fade-in-up process-flow flex flex-wrap justify-center items-start gap-4 md:gap-0">
           <div class="process-step">
             <div class="process-icon">
-              <span class="text-2xl">📞</span>
+              <span class="process-num">1</span>
+              <img src="static/images/icon_inquiry.webp" loading="lazy" alt="상담 문의" class="process-icon-img">
             </div>
             <h3 class="process-step-title">상담 문의</h3>
             <p class="process-step-desc">카카오톡 또는 전화로<br>간편 상담</p>
           </div>
-          <div class="process-arrow">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 6 15 12 9 18"/></svg>
-          </div>
+          <div class="process-arrow">›</div>
           <div class="process-step">
             <div class="process-icon">
-              <span class="text-2xl">📋</span>
+              <span class="process-num">2</span>
+              <img src="static/images/icon_check.webp" loading="lazy" alt="조건 확인" class="process-icon-img">
             </div>
             <h3 class="process-step-title">조건 확인</h3>
             <p class="process-step-desc">지급률 및 조건<br>맞춤 안내</p>
           </div>
-          <div class="process-arrow">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 6 15 12 9 18"/></svg>
-          </div>
+          <div class="process-arrow">›</div>
           <div class="process-step">
             <div class="process-icon">
-              <span class="text-2xl">💳</span>
+              <span class="process-num">3</span>
+              <img src="static/images/icon_card.webp" loading="lazy" alt="카드 결제" class="process-icon-img">
             </div>
             <h3 class="process-step-title">카드 결제</h3>
             <p class="process-step-desc">신용카드로<br>간편 결제 진행</p>
           </div>
-          <div class="process-arrow">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 6 15 12 9 18"/></svg>
-          </div>
+          <div class="process-arrow">›</div>
           <div class="process-step">
             <div class="process-icon">
-              <span class="text-2xl">💰</span>
+              <span class="process-num">4</span>
+              <img src="static/images/icon_payout.webp" loading="lazy" alt="빠른 입금" class="process-icon-img">
             </div>
             <h3 class="process-step-title">빠른 입금</h3>
             <p class="process-step-desc">승인 후<br>5분 내 입금 완료</p>
@@ -273,43 +287,203 @@
       </div>
     </section>
 
-    <!-- ===== Bottom Banner Section ===== -->
-    <section class="py-16 md:py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="fade-in-up bottom-banner">
-          <div class="banner-cta-overlay">
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-4">지금 바로 상담받으세요</h2>
-            <p class="text-white/90 text-base sm:text-lg mb-8 max-w-lg">업계 최고 지급률, 빠른 입금, 친절한 상담까지.<br>초원페이가 도와드리겠습니다.</p>
-            <div class="flex gap-4">
-              <a href="#" class="cta-btn cta-kakao">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.86 5.22 4.65 6.6l-.95 3.53c-.07.26.2.47.43.33l4.1-2.72c.58.07 1.17.11 1.77.11 5.52 0 10-3.58 10-7.95S17.52 3 12 3z"/></svg>
-                카카오톡 상담
-              </a>
-              <a href="tel:1588-0000" class="cta-btn cta-phone" style="background:white;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                전화 문의
-              </a>
+    <!-- ===== Live Usage Section ===== -->
+    <section class="py-16 md:py-24" style="background:#f8fdf9;" id="liveUsage">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="fade-in-up">
+          <h2 class="section-title">실시간 이용현황</h2>
+          <p class="section-subtitle">지금도 많은 고객이 초원페이를 이용하고 있습니다</p>
+        </div>
+        <div class="fade-in-up">
+          <div class="live-ticker-header-standalone">
+            <span class="live-dot"></span>
+            <span class="live-label">LIVE</span>
+          </div>
+          <div class="live-marquee-wrap">
+            <div class="live-marquee-row">
+              <div class="live-marquee-track marquee-left">
+                <div class="live-ticker-card"><span class="ticker-time">방금 전</span><span class="ticker-name">황**</span><span class="ticker-card-name">삼성카드</span><span class="ticker-amount">1,500,000원</span><span class="ticker-method">일시불</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">2분 전</span><span class="ticker-name">김**</span><span class="ticker-card-name">신한카드</span><span class="ticker-amount">2,300,000원</span><span class="ticker-method">3개월</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">5분 전</span><span class="ticker-name">이**</span><span class="ticker-card-name">KB국민</span><span class="ticker-amount">800,000원</span><span class="ticker-method">일시불</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">7분 전</span><span class="ticker-name">박**</span><span class="ticker-card-name">현대카드</span><span class="ticker-amount">3,000,000원</span><span class="ticker-method">6개월</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">11분 전</span><span class="ticker-name">최**</span><span class="ticker-card-name">롯데카드</span><span class="ticker-amount">1,200,000원</span><span class="ticker-method">일시불</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">14분 전</span><span class="ticker-name">정**</span><span class="ticker-card-name">하나카드</span><span class="ticker-amount">5,000,000원</span><span class="ticker-method">12개월</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">18분 전</span><span class="ticker-name">조**</span><span class="ticker-card-name">삼성카드</span><span class="ticker-amount">950,000원</span><span class="ticker-method">일시불</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">22분 전</span><span class="ticker-name">윤**</span><span class="ticker-card-name">신한카드</span><span class="ticker-amount">4,200,000원</span><span class="ticker-method">3개월</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">방금 전</span><span class="ticker-name">황**</span><span class="ticker-card-name">삼성카드</span><span class="ticker-amount">1,500,000원</span><span class="ticker-method">일시불</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">2분 전</span><span class="ticker-name">김**</span><span class="ticker-card-name">신한카드</span><span class="ticker-amount">2,300,000원</span><span class="ticker-method">3개월</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">5분 전</span><span class="ticker-name">이**</span><span class="ticker-card-name">KB국민</span><span class="ticker-amount">800,000원</span><span class="ticker-method">일시불</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">7분 전</span><span class="ticker-name">박**</span><span class="ticker-card-name">현대카드</span><span class="ticker-amount">3,000,000원</span><span class="ticker-method">6개월</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">11분 전</span><span class="ticker-name">최**</span><span class="ticker-card-name">롯데카드</span><span class="ticker-amount">1,200,000원</span><span class="ticker-method">일시불</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">14분 전</span><span class="ticker-name">정**</span><span class="ticker-card-name">하나카드</span><span class="ticker-amount">5,000,000원</span><span class="ticker-method">12개월</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">18분 전</span><span class="ticker-name">조**</span><span class="ticker-card-name">삼성카드</span><span class="ticker-amount">950,000원</span><span class="ticker-method">일시불</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">22분 전</span><span class="ticker-name">윤**</span><span class="ticker-card-name">신한카드</span><span class="ticker-amount">4,200,000원</span><span class="ticker-method">3개월</span><span class="ticker-status">입금완료</span></div>
+              </div>
+            </div>
+            <div class="live-marquee-row">
+              <div class="live-marquee-track marquee-right">
+                <div class="live-ticker-card"><span class="ticker-time">1분 전</span><span class="ticker-name">강**</span><span class="ticker-card-name">KB국민</span><span class="ticker-amount">2,000,000원</span><span class="ticker-method">일시불</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">3분 전</span><span class="ticker-name">한**</span><span class="ticker-card-name">하나카드</span><span class="ticker-amount">1,800,000원</span><span class="ticker-method">6개월</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">6분 전</span><span class="ticker-name">서**</span><span class="ticker-card-name">롯데카드</span><span class="ticker-amount">700,000원</span><span class="ticker-method">일시불</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">9분 전</span><span class="ticker-name">임**</span><span class="ticker-card-name">현대카드</span><span class="ticker-amount">3,500,000원</span><span class="ticker-method">12개월</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">13분 전</span><span class="ticker-name">오**</span><span class="ticker-card-name">삼성카드</span><span class="ticker-amount">2,500,000원</span><span class="ticker-method">3개월</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">16분 전</span><span class="ticker-name">배**</span><span class="ticker-card-name">신한카드</span><span class="ticker-amount">1,000,000원</span><span class="ticker-method">일시불</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">20분 전</span><span class="ticker-name">문**</span><span class="ticker-card-name">KB국민</span><span class="ticker-amount">4,000,000원</span><span class="ticker-method">6개월</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">25분 전</span><span class="ticker-name">송**</span><span class="ticker-card-name">하나카드</span><span class="ticker-amount">500,000원</span><span class="ticker-method">일시불</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">1분 전</span><span class="ticker-name">강**</span><span class="ticker-card-name">KB국민</span><span class="ticker-amount">2,000,000원</span><span class="ticker-method">일시불</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">3분 전</span><span class="ticker-name">한**</span><span class="ticker-card-name">하나카드</span><span class="ticker-amount">1,800,000원</span><span class="ticker-method">6개월</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">6분 전</span><span class="ticker-name">서**</span><span class="ticker-card-name">롯데카드</span><span class="ticker-amount">700,000원</span><span class="ticker-method">일시불</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">9분 전</span><span class="ticker-name">임**</span><span class="ticker-card-name">현대카드</span><span class="ticker-amount">3,500,000원</span><span class="ticker-method">12개월</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">13분 전</span><span class="ticker-name">오**</span><span class="ticker-card-name">삼성카드</span><span class="ticker-amount">2,500,000원</span><span class="ticker-method">3개월</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">16분 전</span><span class="ticker-name">배**</span><span class="ticker-card-name">신한카드</span><span class="ticker-amount">1,000,000원</span><span class="ticker-method">일시불</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">20분 전</span><span class="ticker-name">문**</span><span class="ticker-card-name">KB국민</span><span class="ticker-amount">4,000,000원</span><span class="ticker-method">6개월</span><span class="ticker-status">입금완료</span></div>
+                <div class="live-ticker-card"><span class="ticker-time">25분 전</span><span class="ticker-name">송**</span><span class="ticker-card-name">하나카드</span><span class="ticker-amount">500,000원</span><span class="ticker-method">일시불</span><span class="ticker-status">입금완료</span></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== Contact Section ===== -->
-    <section class="py-16 md:py-20 bg-white" id="contact">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <!-- ===== Customer Reviews Section ===== -->
+    <section class="py-16 md:py-24 bg-white" id="reviews">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="fade-in-up">
-          <h2 class="section-title">문의하기</h2>
-          <p class="section-subtitle">궁금한 점이 있으시면 언제든 연락 주세요</p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#" class="cta-btn cta-kakao">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.86 5.22 4.65 6.6l-.95 3.53c-.07.26.2.47.43.33l4.1-2.72c.58.07 1.17.11 1.77.11 5.52 0 10-3.58 10-7.95S17.52 3 12 3z"/></svg>
-              카카오톡 상담
-            </a>
-            <a href="tel:1588-0000" class="cta-btn cta-phone">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              전화 문의
-            </a>
+          <h2 class="section-title">고객 후기</h2>
+          <p class="section-subtitle">실제 이용 고객님들의 솔직한 후기입니다</p>
+        </div>
+      </div>
+      <div class="review-marquee-wrap fade-in-up">
+        <!-- Row 1: scrolls left -->
+        <div class="review-marquee-row">
+          <div class="review-marquee-track marquee-left">
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">새벽 3시에 급하게 필요해서 연락했는데 바로 응대해 주셔서 놀랐습니다. 진짜 24시간 365일 운영이더라고요. 입금도 3분 만에 완료!</p>
+              <div class="review-author"><div class="review-avatar">김</div><div><span class="review-name">김**</span><span class="review-date">2026.05</span></div></div>
+            </div>
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">다른 곳 여러 군데 알아봤는데 초원페이가 지급률이 가장 높았어요. 수수료도 투명하게 안내해 주시고, 타사 대비 확실히 더 받았습니다.</p>
+              <div class="review-author"><div class="review-avatar">이</div><div><span class="review-name">이**</span><span class="review-date">2026.04</span></div></div>
+            </div>
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">카톡으로 상담하고 결제하니까 5분도 안 돼서 입금 확인됐어요. 이렇게 빠른 건 처음이라 정말 만족합니다. 다음에도 꼭 이용할게요.</p>
+              <div class="review-author"><div class="review-avatar">박</div><div><span class="review-name">박**</span><span class="review-date">2026.05</span></div></div>
+            </div>
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">상담사분이 너무 친절하셔서 궁금한 점 다 물어볼 수 있었어요. 첫 이용인데 처음부터 끝까지 꼼꼼하게 안내받았습니다.</p>
+              <div class="review-author"><div class="review-avatar">정</div><div><span class="review-name">정**</span><span class="review-date">2026.06</span></div></div>
+            </div>
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">주말에도 바로 처리해 주셔서 감사합니다. 24시간 운영이라 시간 상관없이 이용할 수 있어서 직장인으로서 정말 편해요.</p>
+              <div class="review-author"><div class="review-avatar">한</div><div><span class="review-name">한**</span><span class="review-date">2026.04</span></div></div>
+            </div>
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">새벽 3시에 급하게 필요해서 연락했는데 바로 응대해 주셔서 놀랐습니다. 진짜 24시간 365일 운영이더라고요. 입금도 3분 만에 완료!</p>
+              <div class="review-author"><div class="review-avatar">김</div><div><span class="review-name">김**</span><span class="review-date">2026.05</span></div></div>
+            </div>
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">다른 곳 여러 군데 알아봤는데 초원페이가 지급률이 가장 높았어요. 수수료도 투명하게 안내해 주시고, 타사 대비 확실히 더 받았습니다.</p>
+              <div class="review-author"><div class="review-avatar">이</div><div><span class="review-name">이**</span><span class="review-date">2026.04</span></div></div>
+            </div>
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">카톡으로 상담하고 결제하니까 5분도 안 돼서 입금 확인됐어요. 이렇게 빠른 건 처음이라 정말 만족합니다. 다음에도 꼭 이용할게요.</p>
+              <div class="review-author"><div class="review-avatar">박</div><div><span class="review-name">박**</span><span class="review-date">2026.05</span></div></div>
+            </div>
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">상담사분이 너무 친절하셔서 궁금한 점 다 물어볼 수 있었어요. 첫 이용인데 처음부터 끝까지 꼼꼼하게 안내받았습니다.</p>
+              <div class="review-author"><div class="review-avatar">정</div><div><span class="review-name">정**</span><span class="review-date">2026.06</span></div></div>
+            </div>
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">주말에도 바로 처리해 주셔서 감사합니다. 24시간 운영이라 시간 상관없이 이용할 수 있어서 직장인으로서 정말 편해요.</p>
+              <div class="review-author"><div class="review-avatar">한</div><div><span class="review-name">한**</span><span class="review-date">2026.04</span></div></div>
+            </div>
+          </div>
+        </div>
+        <!-- Row 2: scrolls right -->
+        <div class="review-marquee-row">
+          <div class="review-marquee-track marquee-right">
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">모든 카드사 다 되고 무이자 할부까지 가능해서 부담이 확 줄었어요. 삼성, 신한, 현대 다 써봤는데 전부 문제없이 진행됐습니다.</p>
+              <div class="review-author"><div class="review-avatar">최</div><div><span class="review-name">최**</span><span class="review-date">2026.03</span></div></div>
+            </div>
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">환급률이 다른 데보다 높아서 만족합니다. 두 번째 이용인데 첫 번째 때와 동일하게 빠르고 정확하게 처리해 주셨어요.</p>
+              <div class="review-author"><div class="review-avatar">조</div><div><span class="review-name">조**</span><span class="review-date">2026.05</span></div></div>
+            </div>
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">새벽 2시에 급한 자금이 필요했는데 카톡 보내자마자 바로 답변 오더라고요. 정말 24시간 맞습니다. 너무 감사했어요.</p>
+              <div class="review-author"><div class="review-avatar">윤</div><div><span class="review-name">윤**</span><span class="review-date">2026.06</span></div></div>
+            </div>
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">할부로 진행했는데 무이자라 부담이 정말 적었어요. 카드사별로 조건이 다른데 상담 때 자세히 알려주셔서 최적의 선택을 할 수 있었습니다.</p>
+              <div class="review-author"><div class="review-avatar">강</div><div><span class="review-name">강**</span><span class="review-date">2026.05</span></div></div>
+            </div>
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">벌써 세 번째 이용인데 매번 빠르고 안정적입니다. 지인한테도 추천했고 지인도 만족하며 계속 이용 중이에요. 믿고 쓸 수 있는 곳입니다.</p>
+              <div class="review-author"><div class="review-avatar">서</div><div><span class="review-name">서**</span><span class="review-date">2026.04</span></div></div>
+            </div>
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">모든 카드사 다 되고 무이자 할부까지 가능해서 부담이 확 줄었어요. 삼성, 신한, 현대 다 써봤는데 전부 문제없이 진행됐습니다.</p>
+              <div class="review-author"><div class="review-avatar">최</div><div><span class="review-name">최**</span><span class="review-date">2026.03</span></div></div>
+            </div>
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">환급률이 다른 데보다 높아서 만족합니다. 두 번째 이용인데 첫 번째 때와 동일하게 빠르고 정확하게 처리해 주셨어요.</p>
+              <div class="review-author"><div class="review-avatar">조</div><div><span class="review-name">조**</span><span class="review-date">2026.05</span></div></div>
+            </div>
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">새벽 2시에 급한 자금이 필요했는데 카톡 보내자마자 바로 답변 오더라고요. 정말 24시간 맞습니다. 너무 감사했어요.</p>
+              <div class="review-author"><div class="review-avatar">윤</div><div><span class="review-name">윤**</span><span class="review-date">2026.06</span></div></div>
+            </div>
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">할부로 진행했는데 무이자라 부담이 정말 적었어요. 카드사별로 조건이 다른데 상담 때 자세히 알려주셔서 최적의 선택을 할 수 있었습니다.</p>
+              <div class="review-author"><div class="review-avatar">강</div><div><span class="review-name">강**</span><span class="review-date">2026.05</span></div></div>
+            </div>
+            <div class="review-card-m">
+              <div class="review-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <p class="review-text">벌써 세 번째 이용인데 매번 빠르고 안정적입니다. 지인한테도 추천했고 지인도 만족하며 계속 이용 중이에요. 믿고 쓸 수 있는 곳입니다.</p>
+              <div class="review-author"><div class="review-avatar">서</div><div><span class="review-name">서**</span><span class="review-date">2026.04</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Bottom Banner Section ===== -->
+    <section class="py-16 md:py-24 bg-white">
+      <div class="mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="fade-in-up bottom-banner">
+          <div class="banner-cta-overlay">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-4" style="color:var(--color-text-dark);">지금 바로 상담받으세요</h2>
+            <p class="text-base sm:text-lg mb-8 max-w-lg" style="color:var(--color-text-gray);">업계 최고 지급률, 빠른 입금, 친절한 상담까지.<br>초원페이가 도와드리겠습니다.</p>
+            <div class="flex gap-4">
+              <a href="#" data-kakao class="cta-btn cta-kakao">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.86 5.22 4.65 6.6l-.95 3.53c-.07.26.2.47.43.33l4.1-2.72c.58.07 1.17.11 1.77.11 5.52 0 10-3.58 10-7.95S17.52 3 12 3z"/></svg>
+                카카오톡 상담
+              </a>
+              <a href="tel:1588-0000" data-phone class="cta-btn cta-phone">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                전화 문의
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -323,12 +497,12 @@
         <div>
           <h3 class="text-xl font-bold text-white mb-3">초원페이</h3>
           <p class="text-sm leading-relaxed opacity-70">
-            신용카드 결제 매입 전문 업체<br>
+            신용카드 현금화 전문 업체<br>
             빠른 입금 · 높은 지급률 · 안전한 거래
           </p>
         </div>
         <div class="text-sm leading-relaxed">
-          <p class="mb-1">대표전화: 1588-0000</p>
+          <p class="mb-1">대표전화: <span data-phone-text>1661-5330</span></p>
           <p class="mb-1">운영시간: 24시간 365일</p>
           <p class="opacity-50 mt-4">&copy; 2026 초원페이. All rights reserved.</p>
         </div>
@@ -338,14 +512,15 @@
 
   <!-- ===== Floating Contact Widget ===== -->
   <div class="floating-contact" id="floatingContact">
-    <a href="tel:1588-0000" class="floating-btn floating-phone" aria-label="전화 문의">
+    <a href="tel:1588-0000" data-phone class="floating-btn floating-phone" aria-label="전화 문의">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
     </a>
-    <a href="#" class="floating-btn floating-kakao" aria-label="카카오톡 상담">
+    <a href="#" data-kakao class="floating-btn floating-kakao" aria-label="카카오톡 상담">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.86 5.22 4.65 6.6l-.95 3.53c-.07.26.2.47.43.33l4.1-2.72c.58.07 1.17.11 1.77.11 5.52 0 10-3.58 10-7.95S17.52 3 12 3z"/></svg>
     </a>
   </div>
 
+  <script src="static/config.js"></script>
   <script src="static/script.js"></script>
 </body>
 </html>
