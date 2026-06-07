@@ -4,8 +4,8 @@
 window.SITE_CONFIG = {
 
   /* 카카오톡 상담 링크 (오픈프로필 / vvd 단축 URL)
-     예: "https://vvd.bz/xxxx"  ← 따옴표 안만 교체 */
-  KAKAO_URL: "#",
+     예: "https://vvd.im/24cw"  ← 따옴표 안만 교체 */
+  KAKAO_URL: "https://vvd.im/24cw",
 
   /* 대표 전화번호 (전화 버튼 + 푸터 표기에 모두 적용) */
   PHONE: "1661-5330"
